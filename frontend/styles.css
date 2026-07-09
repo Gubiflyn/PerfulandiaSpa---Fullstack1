@@ -1,0 +1,240 @@
+:root {
+  --dark: #151515;
+  --gold: #c9a45c;
+  --gold-dark: #a98742;
+  --cream: #f8f3ea;
+  --gray: #6c757d;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  background-color: var(--white);
+}
+
+.custom-navbar {
+  background-color: rgba(21, 21, 21, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.navbar-brand {
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #f4f4f4 !important;
+  margin-left: 12px;
+}
+
+.nav-link:hover {
+  color: var(--gold) !important;
+}
+
+.hero-section {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
+    url("https://images.unsplash.com/photo-1592945403244-b3fbafd7f539");
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+}
+
+.hero-subtitle,
+.section-subtitle {
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.hero-text {
+  color: #e5e5e5;
+  font-size: 1.1rem;
+  max-width: 540px;
+  margin: 24px 0;
+}
+
+.hero-card {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 32px;
+  border-radius: 22px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-card h5 {
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.btn-gold {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+  font-weight: bold;
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-dark);
+  border-color: var(--gold-dark);
+  color: var(--white);
+}
+
+.section-padding {
+  padding: 90px 0;
+}
+
+.bg-light-custom {
+  background-color: var(--cream);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 45px auto;
+}
+
+.section-header h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.section-header p {
+  color: var(--gray);
+}
+
+.product-card {
+  border: none;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+}
+
+.product-image {
+  height: 260px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.product-brand {
+  color: var(--gold-dark);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.product-title {
+  font-weight: 700;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.stock-badge {
+  background-color: #f1e5cd;
+  color: #6e5422;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.form-card {
+  background-color: var(--white);
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.form-card h4 {
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.form-control,
+.form-select {
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(201, 164, 92, 0.25);
+}
+
+.user-box {
+  background-color: var(--cream);
+  border-left: 4px solid var(--gold);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.table {
+  vertical-align: middle;
+}
+
+.custom-alert {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  max-width: 360px;
+}
+
+.custom-alert.success {
+  border-left: 5px solid #28a745;
+}
+
+.custom-alert.error {
+  border-left: 5px solid #dc3545;
+}
+
+.footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 28px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 65px 0;
+  }
+
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

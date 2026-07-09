@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfulandia SPA</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#inicio">Perfulandia SPA</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#usuarios">Usuarios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#compras">Compras</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="inicio" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-6">
+          <p class="hero-subtitle">Perfumería online</p>
+          <h1 class="hero-title">Aromas exclusivos para cada momento</h1>
+          <p class="hero-text">
+            Descubre perfumes seleccionados, compra en línea y mantente conectado con Perfulandia SPA.
+          </p>
+          <a href="#catalogo" class="btn btn-gold btn-lg">Ver catálogo</a>
+        </div>
+
+        <div class="col-lg-6 mt-5 mt-lg-0">
+          <div class="hero-card">
+            <h5>Proyecto Fullstack 1</h5>
+            <p>
+              Frontend conectado a microservicios Spring Boot para catálogo,
+              usuarios, ventas y contacto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="catalogo" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-subtitle">Catálogo</p>
+          <h2>Perfumes disponibles</h2>
+          <p>Productos obtenidos desde el microservicio de catálogo.</p>
+        </div>
+
+        <div id="catalogoContainer" class="row g-4">
+          <!-- Perfumes desde JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section id="usuarios" class="section-padding bg-light-custom">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-subtitle">Usuarios</p>
+          <h2>Registro e inicio de sesión</h2>
+          <p>Conexión con el microservicio de usuarios usando contraseña encriptada.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="form-card">
+              <h4>Crear cuenta</h4>
+
+              <form id="registroForm">
+                <div class="mb-3">
+                  <label class="form-label">Nombre</label>
+                  <input type="text" id="registroNombre" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" id="registroEmail" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Contraseña</label>
+                  <input type="password" id="registroContrasena" class="form-control" required />
+                </div>
+
+                <button type="submit" class="btn btn-dark w-100">Registrarme</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-card">
+              <h4>Iniciar sesión</h4>
+
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" id="loginEmail" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Contraseña</label>
+                  <input type="password" id="loginContrasena" class="form-control" required />
+                </div>
+
+                <button type="submit" class="btn btn-gold w-100">Ingresar</button>
+              </form>
+
+              <div id="usuarioActivo" class="user-box mt-3 d-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compras" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-subtitle">Ventas</p>
+          <h2>Comprar perfume</h2>
+          <p>La compra se registra en ventas y descuenta stock desde catálogo.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="form-card">
+              <h4>Nueva compra</h4>
+
+              <form id="ventaForm">
+                <div class="mb-3">
+                  <label class="form-label">Nombre cliente</label>
+                  <input type="text" id="ventaNombre" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Email cliente</label>
+                  <input type="email" id="ventaEmail" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Perfume</label>
+                  <select id="ventaPerfume" class="form-select" required>
+                    <option value="">Seleccione un perfume</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Cantidad</label>
+                  <input type="number" id="ventaCantidad" class="form-control" min="1" value="1" required />
+                </div>
+
+                <button type="submit" class="btn btn-dark w-100">Comprar</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="form-card">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Ventas registradas</h4>
+                <button id="btnActualizarVentas" class="btn btn-outline-dark btn-sm">
+                  Actualizar
+                </button>
+              </div>
+
+              <div id="ventasContainer" class="table-responsive">
+                <!-- Ventas desde JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section-padding bg-light-custom">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-subtitle">Contacto</p>
+          <h2>Escríbenos</h2>
+          <p>Formulario conectado al microservicio de contacto.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="form-card">
+              <form id="contactoForm">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" id="contactoNombre" class="form-control" required />
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" id="contactoEmail" class="form-control" required />
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Asunto</label>
+                  <input type="text" id="contactoAsunto" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Mensaje</label>
+                  <textarea id="contactoMensaje" class="form-control" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-gold w-100">Enviar mensaje</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="mb-0">Perfulandia SPA · Proyecto Fullstack 1</p>
+    </div>
+  </footer>
+
+  <div id="alerta" class="custom-alert d-none"></div>
+
+  <script src="app.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>
